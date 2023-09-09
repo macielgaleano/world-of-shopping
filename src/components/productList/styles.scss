@@ -1,0 +1,22 @@
+@import '../../styles/mixins';
+@import '../../styles/variables';
+
+.product-list {
+  width: 100%;
+  margin-bottom: 30px;
+  @include display-flex(center);
+  flex-direction: column;
+
+  &__title {
+    width: 100%;
+    text-align: left;
+    text-transform: uppercase;
+    @include text(1.5rem, bold, normal, $text-color-primary);
+    margin: 20px 0 50px;
+  }
+
+  &__items {
+    width: 100%;
+    @include grid-layout(repeat(auto-fill, minmax(250px, 1fr)), 2rem, 1fr);
+  }
+}
