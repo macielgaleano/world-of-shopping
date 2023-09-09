@@ -1,0 +1,35 @@
+@import '../../styles/mixins';
+@import '../../styles/variables';
+@import '../../styles/breakpoints';
+
+.star-rating {
+  width: auto;
+  background-color: transparent;
+  border: none;
+  outline: none;
+  cursor: pointer;
+
+  .desktop {
+    display: none;
+  }
+
+  &__count {
+    @include text(1rem, normal, normal,  $text-color-disabled);
+
+    &::after {
+      content: ')';
+    }
+
+    &::before {
+      content: '(';
+    }
+  }
+
+  .on {
+    color: $yellow;
+  }
+
+  .off {
+    color: #ccc;
+  }
+}
