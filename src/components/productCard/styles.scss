@@ -1,0 +1,41 @@
+@import '../../styles/mixins';
+@import '../../styles/variables';
+
+.product-card {
+  height: 100%;
+  overflow: hidden;
+  @include display-flex(space-between);
+  flex-direction: column;
+  border-radius: 15px;
+  box-shadow: $shadow-elevated;
+
+  &__title {
+    text-align: center;
+    margin: 10px 20px;
+    @include text(1rem, 500, normal, $text-color-primary);
+  }
+
+  &__price {
+    width: 100%;
+    padding: 10px 20px;
+    @include text(1.1rem, 600, normal, $text-color-secondary);
+
+    &::after {
+      content: ' $'
+    }
+  }
+
+  &__image {
+    object-fit: contain;
+    @include size(90%, 300px);
+  }
+
+  &__button {
+    cursor: pointer;
+    padding: 10px;
+    @include size(100%, auto);
+    background: $background-secondary;
+    text-transform: uppercase;
+    @include text(1rem, 600, normal, $white);
+  }
+}
