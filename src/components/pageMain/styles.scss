@@ -1,0 +1,6 @@
+@import '../../styles/mixins';
+@import '../../styles/variables';
+
+.page-main {
+  @include size(100%, 100%);
+}
