@@ -1,11 +1,11 @@
 import React from 'react';
 import { RouterProvider, createBrowserRouter } from 'react-router-dom';
-import Layout from './component/layout';
+import Layout from './components/layout';
 import { getProductByID, getProductList } from './client';
-import ErrorBoundary from './component/errorBoundary';
-import Loading from './component/loading';
-import ProductDetail from './component/productDetail';
-import PageMain from './component/pageMain';
+import ErrorBoundary from './components/errorBoundary';
+import Loading from './components/loading';
+import ProductDetail from './components/productDetail';
+import PageMain from './components/pageMain';
 
 function App() {
   const router = createBrowserRouter([
