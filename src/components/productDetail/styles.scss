@@ -1,0 +1,151 @@
+@import '../../styles/mixins';
+@import '../../styles/variables';
+@import '../../styles/breakpoints';
+
+.product-detail {
+  @include display-flex(center);
+  flex-direction: column;
+
+  &__image {
+    @include size(100%, 400px);
+
+    @include tablet {
+      @include size(80%, 500px)
+    }
+
+    @include desktop {
+      height: 600px;
+    }
+
+    @include desktop {
+      max-width: 500px;
+    }
+  }
+
+  &__information {
+    margin-top: 40px;
+
+    &-title {
+      text-align: center;
+      @include text(1.3rem, bold, normal, $text-color-primary);
+
+      @include tablet {
+        font-size: 1.6rem;
+      }
+    
+      @include desktop {
+        font-size: 2rem;
+      }
+    }
+
+    &-price-rating {
+      margin: 20px 0;
+      @include display-flex(space-between, center);
+  
+      @include tablet {
+        font-size: 1.1rem;
+      }
+    
+      @include desktop {
+        font-size: 1.3rem;
+      }
+    }
+
+    &-price {
+      margin: 20px 0;
+      @include text(1rem, bold, normal, $text-color-secondary);
+
+      &::after {
+        content: ' $'
+      }
+    }
+
+    &-rating {
+      width: 50%
+    }
+
+    &-cart {
+      width: 100%;
+
+      &__units {
+        @include display-flex(left, center);
+  
+        &-quantity {
+          @include text(1rem, 300, normal, $text-color-primary);
+          margin-right: 20px;
+        }
+    
+        &-counter {
+          @include display-flex(left);
+  
+          &-button {
+            border-radius: 5px;
+            color: $white;
+            padding: 5px 8px;
+            background: $text-color-disabled;
+
+            &:hover,
+            &:active {
+              background: $text-color-secondary;
+            }
+          }
+  
+          &-input {
+            margin: 0 10px;
+            padding: 5px 8px;
+            max-width: 100px;
+            border-radius: 5px;
+            color: $text-color-secondary;
+            @include border(all, $text-color-disabled);
+          }
+        }
+      }
+
+      &-button {
+        width: 100%;
+        margin: 20px 0;
+        padding: 10px 10px;
+        border-radius: 7px;
+        text-transform: uppercase;
+        @include display-flex(center);
+        @include text(1rem, bold, normal, $white);
+        background: $background-secondary;
+
+        &-icon {
+          margin-left: 20px;
+          font-size: 1.3rem;
+        }
+
+        &:hover,
+        &:active {
+          background: $background-tertiary;
+        }
+      }
+    }
+
+    &-description {
+      &-title {
+        color: $text-color-primary;
+        margin: 30px 0;
+      }
+
+      &-text {
+        margin-bottom: 30px;
+        text-align: justify;
+      }
+    }
+
+    @include desktop {
+      max-width: 500px;
+    }
+  }
+
+  .disabled {
+    color: $text-color-secondary !important;
+    background: $text-color-disabled !important;
+  }
+
+  @include desktop {
+    @include display-flex(space-around);
+  }
+}
