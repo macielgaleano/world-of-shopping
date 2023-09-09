@@ -5,12 +5,8 @@ module.exports = {
     '^.+\\.(js|jsx)$': 'babel-jest',
   },
   collectCoverageFrom: [
-    '<rootDir>/src/components/**/*.spec.{js,jsx}',
-    '<rootDir>/src/utils/**/*.spec.js',
-    '!<rootDir>/src/mocks/**',
-    '!**/node_modules/**',
-    '!<rootDir>/*.config.js',
-    '!<rootDir>/coverage/**',
+    '**/src/components/**/*.spec.{js,jsx}',
+    '**/src/utils/**/*.spec.js',
   ],
   moduleNameMapper: {
     '^.*\\.scss$': '<rootDir>/src/mocks/styles.js',
@@ -19,12 +15,8 @@ module.exports = {
     '/node_modules/',
     '^.*\\.scss$',
   ],
-  testPathIgnorePatterns: [
-    '<rootDir>/src/mocks/',
-    '<rootDir>/src/constants/',
-    '<rootDir>/src/wordings/',
-  ],
   coveragePathIgnorePatterns: [
+    '<rootDir>/node_modules/',
     '<rootDir>/src/mocks/',
     '<rootDir>/src/constants/',
     '<rootDir>/src/wordings/',
