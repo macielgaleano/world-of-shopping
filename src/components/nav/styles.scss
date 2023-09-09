@@ -1,0 +1,18 @@
+@import '../../styles/mixins';
+@import '../../styles/variables';
+
+.navbar {
+  background: $white;
+  box-shadow: $shadow-elevated;
+  padding: 10px 30px;
+  @include size(100%, 90px);
+  @include display-flex(space-between, center);
+
+  &__brand {
+    @include size(30%, 100%);
+
+    &-img {
+      height: 100%;
+    }
+  }
+}
