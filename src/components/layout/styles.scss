@@ -1,0 +1,13 @@
+.layout {
+  &-header {
+    position: fixed;
+    z-index: 1;
+    width: 100%;
+    top: 0;
+  }
+
+  &-main {
+    margin-top: 100px;
+    padding: 30px 40px;
+  }
+}
