@@ -28,14 +28,16 @@ describe('<Navbar />', () => {
     renderNavBar();
 
     const cartButton = screen.getByRole('button', { name: 'Open Cart' });
-    const cartCollapse = screen.getByRole('dialog', { hidden: true });
+    const cartCollapse = screen.getByRole('dialog');
 
-    expect(cartCollapse).not.toBeVisible();
+    const ppenCartClass = 'cart__collapse--open';
+
+    expect(cartCollapse.classList.contains(ppenCartClass)).toBeFalsy();
 
     act(() => userEvent.click(cartButton));
-    expect(cartCollapse).toBeVisible();
+    expect(cartCollapse.classList.contains(ppenCartClass)).toBeTruthy();
 
     act(() => userEvent.click(cartButton));
-    expect(cartCollapse).not.toBeVisible();
+    expect(cartCollapse.classList.contains(ppenCartClass)).toBeFalsy();
   });
 });

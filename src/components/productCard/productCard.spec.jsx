@@ -30,7 +30,7 @@ describe('ProductCard />', () => {
   test('when clicking the add button executes the function to add to the context', () => {
     renderCardProduct();
   
-    const addButton = screen.getByRole('button', { name: wordings.product.addButtom });
+    const addButton = screen.getByRole('button', { name: wordings.cart.addButton });
     userEvent.click(addButton);
   
     expect(CART_CONTEXT.addProductToCart).toHaveBeenCalled()
