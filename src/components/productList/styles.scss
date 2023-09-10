@@ -10,9 +10,9 @@
   &__title {
     width: 100%;
     text-align: left;
+    margin: 20px 0 50px;
     text-transform: uppercase;
     @include text(1.5rem, bold, normal, $text-color-primary);
-    margin: 20px 0 50px;
   }
 
   &__items {

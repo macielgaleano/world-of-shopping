@@ -4,10 +4,10 @@
 .product-card {
   height: 100%;
   overflow: hidden;
-  @include display-flex(space-between);
-  flex-direction: column;
   border-radius: 15px;
   box-shadow: $shadow-elevated;
+  @include display-flex(space-between);
+  flex-direction: column;
 
   &__title {
     text-align: center;
@@ -33,9 +33,9 @@
   &__button {
     cursor: pointer;
     padding: 10px;
-    @include size(100%, auto);
     background: $background-secondary;
     text-transform: uppercase;
+    @include size(100%, auto);
     @include text(1rem, 600, normal, $white);
   }
 }
