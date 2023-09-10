@@ -1,0 +1,57 @@
+@import '../../../styles/variables';
+@import '../../../styles/mixins';
+@import '../../../styles/breakpoints';
+
+.cart-item {
+  padding: 1.5rem;
+  height: 300px;
+  color: $text-color-primary;
+  @include border(bottom, rgba(0, 0, 0, 0.1));
+
+  &__remover-button {
+    cursor: pointer;
+    width: 100%;
+    text-align: right;
+    color: $danger-color;
+  }
+
+  &__main {
+    @include display-flex(center, flex-start);
+
+    &-image {
+      @include size(50%, 220px);
+      object-fit: contain;
+    }
+
+    &-info {
+      @include display-flex(center);
+      flex-direction: column;
+      margin-left: 20px;
+
+      &-title {
+        color: $text-color-primary;
+        margin-bottom: 20px;
+      }
+
+      &-price {
+        width: 100%;
+        @include display-flex(space-between, center);
+        @include text(0.8rem, normal, normal, $text-color-secondary);
+
+        &-per-unit::after {
+          content: ':';
+        }
+
+        &-total {
+          &::after {
+            content: ' $';
+          }
+        }
+
+        @include tablet {
+          font-size: 1rem;
+        }
+      }
+    }
+  }
+}

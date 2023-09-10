@@ -1,0 +1,104 @@
+@import '../../../styles/variables';
+@import '../../../styles/mixins';
+
+.cart {
+  position: relative;
+
+  &__open-button {
+    cursor: pointer;
+
+    &-icon {
+      font-size: 1.8rem;
+    }
+
+    &-badge {
+      position: absolute;
+      bottom: 65%;
+      left: 60%;
+      transition: 0.2s ease;
+      padding: 2px 5px;
+      border-radius: 100%;
+      background: $background-secondary;
+      @include border(all, $white, 2px);
+      @include text(0.55rem, normal, normal, $white);
+
+      &.active {
+        @include text(0.6rem, normal, normal, $white);
+        animation: bounce 0.5s infinite;
+      }
+    }
+  }
+
+  &__close-button {
+    width: 100%;
+    cursor: pointer;
+    text-align: right;
+    padding: 30px 30px 0;
+  }
+
+  &__collapse {
+    position: fixed;
+    top: 0;
+    left: auto;
+    right: -500px;
+    background: $white;
+    max-width: 500px;
+    @include size(100%, 100%);
+    @include border(all, none);
+    box-shadow: $shadow-elevated;
+    transition: right 0.5s ease;
+
+    &--open {
+      right: 0;
+    }
+  }
+
+  &-content {
+    @include size(100%, 100%);
+    @include display-flex(space-between);
+    flex-direction: column;
+
+    &__title {
+      width: 100%;
+      text-transform: uppercase;
+      text-align: center;
+      @include text(1.2rem, bold, normal, $background-secondary);
+    }
+
+    &__items,
+    &__footer {
+      width: 100%;
+      padding: 30px 10px;
+    }
+
+    &__items {
+      height: 85%;
+      overflow-y: scroll;
+
+      &::-webkit-scrollbar {
+        display: none;
+      }
+    }
+
+    &__footer {
+      &-price {
+        @include text(1.1rem, 600, normal, $text-color-primary);
+        @include display-flex(space-between);
+
+        &-quantity::after {
+          content: " $";
+        }
+      }
+
+      &-order-button {
+        width: 100%;
+        background: $background-secondary;
+        padding: 20px;
+        margin-top: 20px;
+        text-transform: uppercase;
+        @include text(1rem, bold, normal, $white);
+      }
+    }
+  }
+}
+
