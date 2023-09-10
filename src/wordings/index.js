@@ -1,4 +1,4 @@
-export default {
+const wordings = {
   navbar: {
     brandName: 'World Of Shopping',
     cart: 'My Cart',
@@ -23,3 +23,5 @@ export default {
     },
   },
 };
+
+export default wordings;
