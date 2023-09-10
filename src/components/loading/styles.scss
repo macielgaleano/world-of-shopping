@@ -1,0 +1,18 @@
+@import '../../styles/mixins';
+@import '../../styles/variables';
+@import '../../styles/animations';
+
+.loading {
+  @include size(100%, 100vh);
+  @include display-flex(center);
+
+  &__spinner {
+    position: absolute;
+    display: inline-flex;
+    border-radius: 50%;
+    opacity: 0.75;
+    @include size(6rem, 6rem);
+    background: $background-secondary;
+    animation: ping 1.3s infinite alternate;
+  }
+}
