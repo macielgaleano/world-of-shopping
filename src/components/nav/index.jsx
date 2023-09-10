@@ -9,9 +9,7 @@ const Navbar = () => (
     <Link to="/" className="navbar__brand">
       <img src="/images/brand.png" alt={wordings.navbar.brandName} className="navbar__brand-img" />
     </Link>
-    <div className="navbar__cart">
-      <CartCollapse />
-    </div>
+    <CartCollapse />
   </nav>
 );
 
