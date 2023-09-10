@@ -4,13 +4,14 @@ import { CartProvider } from "../../context/cart";
 import Navbar from "../nav";
 import "./styles.scss";
 
-const Layout = () => (
+const Layout = ({children}) => (
   <CartProvider>
     <header className="layout-header">
       <Navbar />      
     </header>
     <main className="layout-main">
       <Outlet />
+      {children}
     </main>   
   </CartProvider>
 )

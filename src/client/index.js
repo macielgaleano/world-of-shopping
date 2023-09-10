@@ -25,6 +25,8 @@ export const getProductByID = async (id) => {
 
     const { data } = await axios.get(`${BASE_URL}/${id}`);
 
+    if(!data) throw Error;
+
     return data;
   } catch (error) {
     console.error(LOG_MESSAGE, error);
