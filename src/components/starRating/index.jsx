@@ -2,7 +2,7 @@ import React from "react";
 import classNames from "classnames";
 import "./styles.scss";
 
-const StarRating = ({ rate, count, title }) => {
+const StarRating = ({ rate, count }) => {
   const ranting = new Array(5).fill(0);
 
   return (

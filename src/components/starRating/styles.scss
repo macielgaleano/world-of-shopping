@@ -4,14 +4,9 @@
 
 .star-rating {
   width: auto;
-  background-color: transparent;
   border: none;
   outline: none;
-  cursor: pointer;
-
-  .desktop {
-    display: none;
-  }
+  background-color: transparent;
 
   &__count {
     @include text(1rem, normal, normal,  $text-color-disabled);
@@ -26,7 +21,7 @@
   }
 
   .on {
-    color: $yellow;
+    color: $information-color;
   }
 
   .off {
