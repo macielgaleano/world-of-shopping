@@ -13,7 +13,7 @@ const ProductDetail = () => {
   const productDetail = useLoaderData();
 
   const { addProductToCart } = useContext(CartContext);
-  const { product: { addButtom, quantity, description: descriptionLabel, assessment, price: priceLabel } } = wordings;
+  const { product: { addButtom, quantity, description: descriptionLabel, price: priceLabel } } = wordings;
   const { id, title, price, description, image, rating } = productDetail;
 
   const [countItem, setCountItem] = useState(1);
@@ -36,15 +36,19 @@ const ProductDetail = () => {
   return (
     <main className="product-detail">
       <img src={image} alt={title} className="product-detail__image" />
+
       <div className="product-detail__information">
         <h1 className="product-detail__information-title">{title}</h1>
+
         <div className="product-detail__information-price-rating">
           <p className="product-detail__information-price">{priceLabel} {showWithPoints(price)}</p>
-          <StarRating title={assessment} {...rating} className="product-detail__information-rating"/>
+          <StarRating {...rating} className="product-detail__information-rating"/>
         </div>
+
         <div className="product-detail__information-cart">
           <div className="product-detail__information-cart__units">
             <p className="product-detail__information-cart__units-quantity">{quantity}</p>
+
             <div className="product-detail__information-cart__units-counter">
               <button
                 onClick={substraCountItem}
@@ -58,7 +62,9 @@ const ProductDetail = () => {
               >
                   -
               </button>
+
               <input type="number" min="0" max="6" className="product-detail__information-cart__units-counter-input" value={countItem} readOnly />
+             
               <button
                 onClick={addCountItem}
                 disabled={disableAddButon}
@@ -73,6 +79,7 @@ const ProductDetail = () => {
               </button>
             </div>
           </div>
+
           <button
             onClick={addItemCart}
             disabled={disableCartButon}
@@ -86,10 +93,12 @@ const ProductDetail = () => {
             {addButtom} <RiShoppingCartLine className="product-detail__information-cart-button-icon"/>
           </button>
         </div>
+
         <div className="product-detail__information-description">
           <h2 className="product-detail__information-description-title">{descriptionLabel}</h2>
           <p className="product-detail__information-description-text">{description}</p>
         </div>
+
       </div>
     </main>
   );
