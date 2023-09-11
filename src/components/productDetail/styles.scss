@@ -8,7 +8,7 @@
 
   &__image {
     @include size(100%, 400px);
-
+    object-fit: contain;
     @include tablet {
       @include size(80%, 500px)
     }

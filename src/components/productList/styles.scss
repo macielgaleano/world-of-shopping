@@ -6,7 +6,8 @@
   margin-bottom: 30px;
   @include display-flex(center);
   flex-direction: column;
-
+  max-width: 1200px;
+  margin: 0 auto;
   &__title {
     width: 100%;
     text-align: left;
@@ -18,5 +19,6 @@
   &__items {
     width: 100%;
     @include grid-layout(repeat(auto-fill, minmax(250px, 1fr)), 2rem, 1fr);
+   
   }
 }
